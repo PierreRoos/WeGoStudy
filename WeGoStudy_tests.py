@@ -4,7 +4,7 @@ import WeGoStudy_methods as methods
 
 class PositiveTestCases(unittest.TestCase):
     @staticmethod
-    def test_create_new_user():
+    def test_main_wegostudy():
         methods.setUp()
         methods.login()
         methods.create_new_student()
