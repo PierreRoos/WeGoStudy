@@ -10,6 +10,7 @@ class PositiveTestCases(unittest.TestCase):
         methods.create_new_student()
         methods.create_new_application()
         methods.view_details()
+        methods.edit_student_details()
         methods.logout()
         methods.tearDown()
         
