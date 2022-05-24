@@ -41,6 +41,7 @@ def tearDown():
 
 
 def login():
+    print('------------ login -----------------')
     driver.find_element(By.XPATH, '//b[normalize-space()="LOGIN"]').click()
     sleep(0.25)
     driver.find_element(By.ID, 'user_email').send_keys(locators.admin_email)
@@ -51,7 +52,7 @@ def login():
     sleep(0.5)
     driver.find_element(By.ID, 'authentication-popup').is_displayed()
     sleep(3)
-    print('------------Signed up successfully!-----------------')
+    print('------------ logged in successfully!-----------------')
 
 
 def logout():
@@ -161,13 +162,13 @@ def create_new_student():
 
 
 def create_new_application():
-    print(f'*****************Course Information******************')
+    print(f'***************** create_new_application ******************')
 
     driver.find_element(By.XPATH, '//span[normalize-space()="My WeGoStudy"]').click()
     # driver.find_element(By.CSS_SELECTOR, 'a[aria-expanded="false"] span[class="my-auto mr-2"]').click()
     sleep(1.25)
     driver.find_element(By.XPATH, '//a[normalize-space()="Students"]').click()
-    sleep(0.75)
+    sleep(1.5)
     driver.find_element(By.LINK_TEXT, 'Create Application').click()
     sleep(0.75)
     driver.find_element(By.XPATH, '//span[normalize-space()="Select School"]').click()
@@ -200,7 +201,8 @@ def create_new_application():
     sleep(4)
     print('-------------application is created successfully.-----------')
 
-def view_details():
+
+def view_student_details():
     print(f'***************** View Details ******************')
     driver.find_element(By.XPATH, '//span[normalize-space()="My WeGoStudy"]').click()
     # driver.find_element(By.CSS_SELECTOR, 'a[aria-expanded="false"] span[class="my-auto mr-2"]').click()
@@ -211,6 +213,7 @@ def view_details():
     sleep(2)
     driver.find_element(By.XPATH, '//body//form').click()
     sleep(6)
+
 
 def edit_student_details():
     print(f'***************** Edit Student Details ******************')
@@ -249,17 +252,40 @@ def edit_student_details():
 
     driver.find_element(By.XPATH, '//body//form').click()
     sleep(6)
-
+    print(f'***************** Student Details edited ******************')
     # driver.find_element(By.XPATH, '//input[@value="Save"]').click()
     # sleep(5)
     # driver.find_element(By.CLASS_NAME, 'toast-message').is_displayed()
-    # sleep(5)    
+    # sleep(5)
+
+
+def edit_applications(): # need to close window still
+    print(f'***************** edit_applications ******************')
+    driver.find_element(By.XPATH, '//span[normalize-space()="My WeGoStudy"]').click()
+    # driver.find_element(By.CSS_SELECTOR, 'a[aria-expanded="false"] span[class="my-auto mr-2"]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//a[normalize-space()="Students"]').click()
+    sleep(2)
+    driver.find_element(By.LINK_TEXT, 'View Applications').click()
+    sleep(0.25)
+
+
+    # driver.find_element(By.CLASS_NAME, 'btn btn-default btn-sm').click()
+    # driver.find_element(By.CSS_SELECTOR, '.btn.btn-default.btn-sm').click()
+    # driver.find_element(By.XPATH, '//button[@class="btn btn-default btn-sm"]').click()
+    # driver.find_element(By.XPATH, '//button[text()="Close"]').click()
+    # driver.find_element(By.XPATH, f'//div[contains(., "modal-content")]/../button[contains(., "btn btn-default btn-sm")]').click()
+    # /html[1]/body[1]/div[4]/div[1]/div[1]/div[2]/div[2]/button[1] #  abs xpath
+
+# //button[@class='btn btn-default btn-sm']  #  Selectorshub Xpath
+# .btn.btn-default.btn-sm  #  SelectorsHub CSS
+# (By.XPATH, f'//td[contains(., "{locators.full_name}")]/../td[contains(., "{locators.email}")]').is_displayed() # example?
 
 # setUp()
 # login()
 # create_new_student()
 # create_new_application()
-# view_details()
-# edit student details()
+# edit_student_details()
+# edit_applications()
 # logout()
 # tearDown()
