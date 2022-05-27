@@ -14,6 +14,8 @@ s = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=s)
 
 
+
+
 def setUp():
     print(f'Test starts at {datetime.datetime.now()}.')
     driver.maximize_window()
@@ -273,6 +275,57 @@ def view_application_list():
 
 
 
+def commissions():
+    print(f' ************ Commissions ************************************')
+    driver.find_element(By.XPATH, '//span[normalize-space()="My WeGoStudy"]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//a[normalize-space()="Commission"]').click()
+    sleep(2)
+
+
+def filter_by_study_area():
+    print(f' *********** Filter By Study Area *******************')
+    driver.find_element(By.XPATH, '//a[normalize-space()="Schools"]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//a[normalize-space()="Filter By Study Area"]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//span[contains(., "Engineering and electronics")]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//span[contains(., "Law programs")]').click()
+    sleep(3)
+    driver.find_element(By.XPATH, '//div[@id="filter_by_study_area"]//a[@class="apply_filter disable_apply"][normalize-space()="Apply"]').click()
+    sleep(6)
+
+
+
+def filter_by_city():
+    print(f' *********** Filter By City *******************')
+    driver.find_element(By.XPATH, '//a[normalize-space()="Schools"]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//a[normalize-space()="Filter By City"]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//span[contains(., "Windsor")]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//span[contains(., "Vancouver")]').click()
+    sleep(3)
+    driver.find_element(By.XPATH, '//div[@id="filter_by_city"]//a[@class="apply_filter disable_apply"][normalize-space()="Apply"]').click()
+    sleep(6)
+
+
+def filter_by_program():
+    print(f' *********** Filter By Program *******************')
+    driver.find_element(By.XPATH, '//a[normalize-space()="Schools"]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//a[normalize-space()="Filter By Program"]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//span[contains(., "Bachelor of Engineering")]').click()
+    sleep(1.25)
+    driver.find_element(By.XPATH, '//span[contains(., "Master of Fine Arts (MFA)")]').click()
+    sleep(3)
+    driver.find_element(By.XPATH, '//div[@id="filter_by_program"]//a[@class="apply_filter disable_apply"][normalize-space()="Apply"]').click()
+    sleep(6)
+
+
 
 
 
@@ -284,5 +337,9 @@ def view_application_list():
 # create_new_application()
 # edit_student_details()
 # view_application_list()
+# commissions()
+# filter_by_study_area()
+# filter_by_city()
+# filter_by_program()
 # logout()
 # tearDown()
