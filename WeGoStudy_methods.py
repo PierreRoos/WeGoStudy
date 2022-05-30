@@ -326,7 +326,23 @@ def filter_by_program():
     sleep(6)
 
 
-
+def schools():
+    driver.find_element(By.XPATH, '//a[normalize-space()="Schools"]').click()
+    sleep(0.5)
+    original_window = driver.current_window_handle
+    driver.find_element(By.XPATH, '//a[contains(., "Visit College Website")]').click()
+    print('-----------Visit College Website Successfully.------------')
+    sleep(5)
+    driver.switch_to.window(original_window)
+    sleep(1)
+    driver.find_element(By.XPATH, '//a[contains(., "Tution")]').click()
+    print('----------------------Tuition website opened.-------------')
+    sleep(5)
+    driver.switch_to.window(original_window)
+    sleep(1)
+    driver.find_element(By.XPATH, '//*[@id="featured_institutes"]/div[2]/div[3]/a/div').click()
+    print('-----------We can launch the college website successfully---------')
+    sleep(5)
 
 
 
@@ -341,5 +357,6 @@ def filter_by_program():
 # filter_by_study_area()
 # filter_by_city()
 # filter_by_program()
+# schools()
 # logout()
 # tearDown()
