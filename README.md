@@ -1,4 +1,4 @@
-# WeGoStudy GitHub123
+# WeGoStudy GitHub
 
 ### 1. Create a local copy of this repository. 
 Do not fork it, we don't want a new repository on your GitHub Page. We want to collaborate on **THIS** repository. Use **git clone** to create a local copy of this repository.
